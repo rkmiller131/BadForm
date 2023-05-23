@@ -9,7 +9,7 @@ export default function AttendeeForm({ addToDB, id }) {
     lastName: '',
     email: '',
     shirt: 'XS',
-    skillLevel: 'Beginner',
+    skillLevel: 'beginner',
   })
 
   function handleChange(e) {
@@ -19,8 +19,7 @@ export default function AttendeeForm({ addToDB, id }) {
      ))
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  function handleSubmit() {
     addToDB(details);
   }
 

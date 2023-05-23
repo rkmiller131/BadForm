@@ -5,9 +5,9 @@ export default function SkillLevel({ handleChange }) {
     <div>
       Choose Your Skill Level: {' '}
       <select name="skillLevel" onChange={(e) => (handleChange(e))}>
-        <option value="Beginner">Beginner</option>
-        <option value="Intermediate">Intermediate</option>
-        <option value="Expert">Expert</option>
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="expert">Expert</option>
       </select>
     </div>
   );
