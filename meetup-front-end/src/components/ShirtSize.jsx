@@ -1,27 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-export default function ShirtSize ({ setShirt }) {
-  const [selectedBtn, setSelectedBtn] = useState(0);
-
-  useEffect(() => {
-    setShirt(selectedBtn);
-  }, [selectedBtn])
-
-  function handleClick(e) {
-    const { value } = e.target;
-    setSelectedBtn(value);
-  }
-  // need to make states unique
+export default function ShirtSize ({ handleChange }) {
   return (
-    <>
-      <label>
-        XS
-        <input type="radio" value="XS" defaultChecked={selectedBtn === 'XS'} onChange={(e) => { handleClick(e) }} />
-      </label>
-          <label>
-          S
-          <input type="radio" value="XS" defaultChecked={selectedBtn === 'S'} onChange={(e) => { handleClick(e) }} />
-        </label>
-    </>
-  )
+    <label>
+      Select T-Shirt Size:{' '}
+      <select name="shirt" onChange={(e) => (handleChange(e))}>
+        <option value="XS">XS</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+      </select>
+    </label>
+  );
 }

@@ -1,39 +1,56 @@
 import React, { useState } from 'react';
 import ShirtSize from './ShirtSize.jsx';
+import SkillLevel from './SkillLevel.jsx';
 
-export default function AttendeeForm({ addToDB, id, setId }) {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [shirt, setShirt] = useState('');
-  const [skill, setSkill] = useState('');
+export default function AttendeeForm({ addToDB, id }) {
+  const [details, setDetails] = useState({
+    id: id,
+    firstName: '',
+    lastName: '',
+    email: '',
+    shirt: 'XS',
+    skillLevel: 'Beginner',
+  })
 
-  function handleSubmit() {
-    const registration = [{
-      id: id,
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      shirt: shirt,
-      skillLevel: skill,
-    }]
-    addToDB(registration);
-    setId(id + 1);
+  function handleChange(e) {
+    const { name, value } = e.target;
+     setDetails((details) => (
+      {...details, [name]: value}
+     ))
   }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    addToDB(details);
+  }
+
   return (
     <form type="submit" onSubmit={handleSubmit}>
       <label>
         First Name:
-        <input type="text" value={firstName} onChange={(e) => (setFirstName(e.target.value))}/>
+        <input
+          type="text"
+          name="firstName"
+          onChange={handleChange}
+        />
       <label>
         Last Name:
-        <input type="text" value={lastName} onChange={(e) => (setLastName(e.target.value))}/>
+        <input
+          type="text"
+          name="lastName"
+          onChange={handleChange}
+        />
       </label>
       <label>
         Email:
-        <input type="text" value={email} onChange={(e) => (setEmail(e.target.value))}/>
+        <input
+          type="email"
+          name="email"
+          onChange={handleChange}
+        />
       </label>
-      <ShirtSize setShirt={setShirt} />
+      <ShirtSize handleChange={handleChange} />
+      <SkillLevel handleChange={handleChange} />
         <button>REGISTER</button>
       </label>
     </form>
