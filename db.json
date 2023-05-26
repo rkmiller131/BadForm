@@ -1,0 +1,28 @@
+{
+  "forms": [
+    {
+      "id": 1,
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "email": "email@example.com",
+      "addressLine1": "123 Arbitrary Ln",
+      "addressLine2": "Apt 33",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zip": 91731,
+      "whichForm": "Bad Form"
+    },
+    {
+      "id": 2,
+      "firstName": "Rachel",
+      "lastName": "Miller",
+      "email": "rachel.miller@email.com",
+      "addressLine1": "987 Real St",
+      "addressLine2": "",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zip": "91731",
+      "whichForm": "Good Form"
+    }
+  ]
+}
