@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import BadForm from './BadForm.jsx';
-
+import GoodForm from './GoodForm.jsx';
+import PerfectForm from './PerfectForm.jsx';
 
 const App = () => {
   const [id, setId] = useState(2);
@@ -16,8 +17,9 @@ const App = () => {
   }
   return (
     <>
-    <BadForm id={id} submitForm={submitForm} />
+    {/* <BadForm id={id} submitForm={submitForm} /> */}
     {/* <GoodForm id={id} submitForm={submitForm} /> */}
+    <PerfectForm id={id} submitForm={submitForm}/>
     </>
   );
 };

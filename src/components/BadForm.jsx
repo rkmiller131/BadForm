@@ -11,8 +11,7 @@ export default function BadForm({ id, submitForm }) {
   const [zip, setZip] = useState('');
   const [form, setForm] = useState('');
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  function handleSubmit() {
     const data = {
       id: id,
       firstName: firstName,
@@ -27,6 +26,7 @@ export default function BadForm({ id, submitForm }) {
     }
     submitForm(data);
   }
+
   return (
     <div>
       Fix Your Forms!
@@ -36,7 +36,7 @@ export default function BadForm({ id, submitForm }) {
         <h3>Email: </h3> <input type="text" value={email} onChange={(e) => (setEmail(e.target.value))}/>
         <h3>Address Line 1: </h3> <input type="text" value={add1} onChange={(e) => (setAdd1(e.target.value))}/>
         <h3>Address Line 2: </h3> <input type="text" value={add2} onChange={(e) => (setAdd2(e.target.value))}/>
-        <h3>City: </h3> <input type="text" value={city} onChange={(e) => (setCity(e.target.value))}/>
+        <h3>City: </h3> <input type="text" value={city} onChange={(e) => (setEmail(e.target.value))}/>
         <h3>State: </h3> <input type="text" value={state} onChange={(e) => (setState(e.target.value))}/>
         <h3>Zip: </h3> <input type="text" value={zip} onChange={(e) => (setZip(e.target.value))}/>
         <h3>Which Form Are You Using?: </h3>
@@ -45,8 +45,7 @@ export default function BadForm({ id, submitForm }) {
           <option value="Good Form">Good Form</option>
           <option value="Perfect Form">Perfect Form</option>
         </select>
-        <button onSubmit={handleSubmit}>Submit Form</button>
       </form>
     </div>
-  );
+  )
 }
