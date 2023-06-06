@@ -1,7 +1,7 @@
 # Bad Form Demo
 Visit: _______________ for presentation slides
 # Description
-Basic Front-End App comparing two solutions for handling large forms with several input fields.
+Basic Front-End App comparing solutions for handling large forms with several input fields.
 Don't use multiple state hooks to control your inputs - That's bad form!
 
 # Technologies
@@ -15,10 +15,3 @@ React state hooks || Formik
 - [ ] 'npm install'
 - [ ] 'npm run react-dev'  to run the pre-configured webpack
 - [ ] 'npm start' to run the json-server
-
-## Available Resources:
-
-- [MDN](https://developer.mozilla.org/bm/docs/Web/JavaScript)
-- [NPM](https://www.npmjs.com/)
-- [React Documentation](https://reactjs.org/docs/hello-world.html)
-- [json-server Documentation](https://www.npmjs.com/package/json-server)
